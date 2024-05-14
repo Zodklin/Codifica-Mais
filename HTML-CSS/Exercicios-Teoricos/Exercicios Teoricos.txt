@@ -1,0 +1,27 @@
+1. O que são tags semânticas? Por que devemos utilizá-las? Dê exemplos de tags
+semânticas
+R- Sao elementos que dao base e estrutura para o que sera exibido. Devemos utilizalas para ter mais organizacao no codigo, alem de ser um padrao mundial. Exemplos: <header>, <main>, <footer> ...
+
+2. O que são elementos inline? Dê exemplos.
+R- Sao elementos usados destacar um trecho do codigo, colocando um texto com uma cor diferente, um link clicavel e ate uma imagem no meio. <span> <a> <img> <br>... 
+
+3. O que são elementos block level? Dê exemplos.
+R- Sao elementos para estruturar a pagina em blocos como uma <div>. 
+
+4. Descreva a utilização do atributo ‘alt’ em imagens no HTML e por que é importante
+utilizar esse atributo.
+R- Esse atributo serve para dar nome a uma imagem para caso por algum motivo o navegador nao consiga demonstrar o img, ele puxe ao menos uma 'previa' do que seria, exemplo, minha pagina tem a foto de um cachorro, porem o usuario usa um navegador que nao renderiza a pagina, o elemento alt vai servir para nomear aquela foto, e mostrar ao user que a foto ali e de um cachorro.
+
+5. Explique o conceito de herança em CSS. Dê exemplo utilizando a propriedade
+‘color’.
+R- O conceito heranca vem dos containers elementos filhos herdarem os elementos do pai, um exemplo seria criar uma <div> com a cor vermelha e por um <p> dentro dela, o paragrafo herdara a cor do pai, a nao ser que a gente especifique que o <p> devera ter outra cor.
+
+6. Explique o que é BEM (Block Element Modifier)
+R- Essa metodologia e usada para nomear e organizar o codigo em CSS, para um entendimento geral e uma futura manutencao no codigo por outra pessoa. Um exeplo seria nomear um elemnto como 'div--principal', dentro dessa div teria um botao, na qual teria uma classe 'div--principal--botao' assim mostrando que esse botao pertence a div principal.
+
+7. Explique e dê exemplos a diferença entre medidas absolutas e relativas
+R- As medidas absolutas sao medidas que tem um valor fixo, e nao dependem de heranca ou de outro elemento (como por exemplo a medida px) , ja as medidas relativas sao medidas baseadas em outros elementos, um exemplo seria eu ter um container de 1000px e dentro dele uma <div> de 50% que seria metade do valor do pai, ou seja 500px. 
+
+8. Explique o que é a unidade de medida Vw (viewport width) e Vh (viewport height) e a
+diferença entre elas.
+R- Essas medidas sao relativas, onde vw representa a largura da visualizacao do elemento, exemplo, se a largura de um elemento sao 100px, e eu dou uma heranca de 10vw para um outro elemento dentro dele, eu teria um total de 10% da largura do elemento. O mesmo padrao segue para vh, porem por sua vez seria em altura ao invez de largura. 

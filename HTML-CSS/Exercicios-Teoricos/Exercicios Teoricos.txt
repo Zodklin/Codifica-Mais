@@ -25,3 +25,5 @@ R- As medidas absolutas sao medidas que tem um valor fixo, e nao dependem de her
 8. Explique o que é a unidade de medida Vw (viewport width) e Vh (viewport height) e a
 diferença entre elas.
 R- Essas medidas sao relativas, onde vw representa a largura da visualizacao do elemento, exemplo, se a largura de um elemento sao 100px, e eu dou uma heranca de 10vw para um outro elemento dentro dele, eu teria um total de 10% da largura do elemento. O mesmo padrao segue para vh, porem por sua vez seria em altura ao invez de largura. 
+
+Alteração aula 23

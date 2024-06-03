@@ -20,4 +20,6 @@ if ($participantes > 1){
     $itemMaiorValor = $itens[$indiceMaiorValor];
 
     echo "O item de maior valor é: $itemMaiorValor , e o preço dele é: $maiorValor";
-};
+} else {
+    echo "O churrasco foi cancelado, todo mundo furou!";
+}

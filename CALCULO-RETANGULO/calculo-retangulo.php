@@ -11,7 +11,7 @@ $perimetro = 2*($largura + $altura);
 
 echo "Largura: $largura metros" . PHP_EOL;
 echo "Altura: $altura metros" . PHP_EOL;
-echo "Largura: $area m²" . PHP_EOL;
-echo "Largura: $perimetro metros";
+echo "Área: $area m²" . PHP_EOL;
+echo "Perímetro: $perimetro metros";
 
 

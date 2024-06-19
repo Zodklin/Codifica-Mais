@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.principal{
+    border: 3px solid black;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0px 10px 32px 27px rgba(0,0,0,0.1);
+}
+
+img{
+    height: 400px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.card__conteudo{
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__titulo{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 10px 0px 10px
+}
+
+.card__tamanho{
+    height: 25vh;
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.card__tamanho button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    font-weight: bolder;
+}
+
+#gg{
+    background-color: black;
+    color: white;
+}
+
+
+.card__comprar{
+    height: 25vh;
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card__comprar button{
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid grey;
+    font-weight: bolder;
+}
+
+#compra{
+    background-color: black;
+    color: white;
+    font-weight: 300;
+}
+
+.card__obs{
+    height: 25vh;
+
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    align-items: center;
+}

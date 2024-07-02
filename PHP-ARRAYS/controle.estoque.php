@@ -97,6 +97,9 @@ function listarEstoque(&$estoque){
     if (empty($estoque)){
         return "Ops, estoque vazio." . PHP_EOL;
     }
+    foreach ($estoque as $i){
+        echo "Código: " . $i['sku'] . PHP_EOL;
+        echo "Nome: " . $i['nome'] . PHP_EOL;
     usort($estoque, function($a, $b) {
         return strcmp($a['nome'], $b['nome']);
     });
@@ -109,7 +112,6 @@ function listarEstoque(&$estoque){
         echo "Preço: " . $i['preco'] . PHP_EOL;
         echo "===========================================" . PHP_EOL;
     }
-
 };
 
 // Função para vender um produto
@@ -130,10 +132,38 @@ function venderProduto(&$estoque, $sku, $quantidade){
 
 //Função para deletar produto
 function deletarProduto(&$estoque, $sku){
+
+
+    // $key = array_search($sku, array_column($estoque, 'sku'));     
+    // if (empty($key)) {
+    // }
+    // echo "$key\n";
+    // if ($produto[$key]['quantidade'] >= 1){
+    // unset($estoque[$key]);
+
+    foreach($estoque as $i => $produto){
+        if ($produto['sku'] == $sku){
+            if ($produto['quantidade'] >= 1){
+                $delete = readline("Produto ainda em estoque, tem certeza que deseja deletar? S ou N: ");
+                if ($delete == 'S'){
+                    unset($estoque[$i]);
+                    echo "Produto deletado com sucesso\n";
+                } else {
+                    echo "Ok, voltando ao menu inicial\n";
+                    return;
+                }
+            } else {
+                unset($estoque[$i]);
+                echo "Produto deletado com sucesso\n";
+                return;
+            }
+        }
+
     $key = array_search($sku, array_column($estoque, 'sku'));
     if (empty($key)) {
         echo "Este produto não existe em estoque.";
         return;
+
     }
     if ($estoque[$key]['quantidade'] >= 1){
         $delete = readline("Produto ainda em estoque, tem certeza que deseja deletar? s/n: ");
@@ -163,7 +193,11 @@ function verificarEstoque (&$estoque, $sku){
     }
 }
 
+// - Criar função para indicar o total de itens distintos que tem disponível no estoque
+// (pode considerar os que estão com quantidade zerada), e a quantidade total de itens
+// no estoque (soma de todas as quantidades de todos os itens)
 //Função para listar a quantidade do estoque
+
 function itens(&$estoque){
    $qtItens = count($estoque);
    $somaItens = 0;
@@ -174,7 +208,6 @@ function itens(&$estoque){
    echo "A soma da quantidade de itens é de $somaItens\n";
    return;
 }
-
 // Criar uma função para atualizar o estoque de determinado produto (use o SKU como
 // parâmetro de entrada). O sistema deve perguntar a quantidade a ser adicionada e o
 // sistema incrementará ao estoque atual
@@ -201,6 +234,8 @@ function exibirMenu()
     echo "3. Verificar Estoque\n";
     echo "4. Listar o Estoque\n";
     echo "5. Deletar Produto\n";
+    echo "6. Itens do estoque\n";
+    echo "7. Sair\n";
     echo "6. Itens do Estoque\n";
     echo "7. Atualizar Estoque\n";
     echo "8. Sair\n";
@@ -253,6 +288,7 @@ while (true) {
             atualizarEstoque($estoque, $sku, $adicao);
             break;
         case 8:
+
             echo "Saindo...\n";
             exit; // Sai do loop e encerra o script
         default:

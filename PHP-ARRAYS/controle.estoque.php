@@ -73,6 +73,7 @@ $estoque = [
    ];
 
 // Implemente aqui o código
+
 // Função para adicionar um produto
 function adicionarProduto(&$estoque, $sku, $nome, $unidade_medida, $quantidade, $preco)
 {
@@ -90,6 +91,7 @@ function adicionarProduto(&$estoque, $sku, $nome, $unidade_medida, $quantidade, 
         'preco' => $preco
     ];
 }
+
 // Função para listar o estoque
 function listarEstoque(&$estoque){    
     if (empty($estoque)){
@@ -98,14 +100,20 @@ function listarEstoque(&$estoque){
     foreach ($estoque as $i){
         echo "Código: " . $i['sku'] . PHP_EOL;
         echo "Nome: " . $i['nome'] . PHP_EOL;
+    usort($estoque, function($a, $b) {
+        return strcmp($a['nome'], $b['nome']);
+    });
+
+    foreach ($estoque as $i){
+        echo "Nome: " . $i['nome'] . PHP_EOL;
+        echo "Código: " . $i['sku'] . PHP_EOL;
         echo "Unidade de Medida: " . $i['unidade_medida'] . PHP_EOL;
         echo "Quantidade: " . $i['quantidade'] . PHP_EOL;
         echo "Preço: " . $i['preco'] . PHP_EOL;
         echo "===========================================" . PHP_EOL;
     }
-
-
 };
+
 // Função para vender um produto
 function venderProduto(&$estoque, $sku, $quantidade){
     foreach($estoque as $i => $produto){
@@ -124,6 +132,7 @@ function venderProduto(&$estoque, $sku, $quantidade){
 
 //Função para deletar produto
 function deletarProduto(&$estoque, $sku){
+
 
     // $key = array_search($sku, array_column($estoque, 'sku'));     
     // if (empty($key)) {
@@ -149,7 +158,24 @@ function deletarProduto(&$estoque, $sku){
                 return;
             }
         }
+
+    $key = array_search($sku, array_column($estoque, 'sku'));
+    if (empty($key)) {
+        echo "Este produto não existe em estoque.";
+        return;
+
     }
+    if ($estoque[$key]['quantidade'] >= 1){
+        $delete = readline("Produto ainda em estoque, tem certeza que deseja deletar? s/n: ");
+        if($delete == 's'){
+            unset($estoque[$key]);
+            echo "Produto deletado com sucesso\n";
+            return;
+        }
+    } 
+    unset($estoque[$key]);
+    echo "Produto deletado com sucesso\n";
+    return;
 }
 
 // Função para verificar o estoque 
@@ -170,6 +196,7 @@ function verificarEstoque (&$estoque, $sku){
 // - Criar função para indicar o total de itens distintos que tem disponível no estoque
 // (pode considerar os que estão com quantidade zerada), e a quantidade total de itens
 // no estoque (soma de todas as quantidades de todos os itens)
+//Função para listar a quantidade do estoque
 
 function itens(&$estoque){
    $qtItens = count($estoque);
@@ -181,6 +208,20 @@ function itens(&$estoque){
    echo "A soma da quantidade de itens é de $somaItens\n";
    return;
 }
+// Criar uma função para atualizar o estoque de determinado produto (use o SKU como
+// parâmetro de entrada). O sistema deve perguntar a quantidade a ser adicionada e o
+// sistema incrementará ao estoque atual
+function atualizarEstoque(&$estoque, $sku, $adicao){
+    $key = array_search($sku, array_column($estoque, 'sku'));
+    if (empty($key)) {
+        echo "Este produto não existe em estoque.";
+        return;
+    } 
+    $estoque[$key]['quantidade'] = $estoque[$key]['quantidade'] + $adicao;
+    echo "Estoque atualizado com sucesso!\n";
+    return;
+}
+
 
 
 // Função para exibir o menu e obter a escolha do usuário
@@ -195,6 +236,9 @@ function exibirMenu()
     echo "5. Deletar Produto\n";
     echo "6. Itens do estoque\n";
     echo "7. Sair\n";
+    echo "6. Itens do Estoque\n";
+    echo "7. Atualizar Estoque\n";
+    echo "8. Sair\n";
     $opcao = readline("Digite a sua escolha: ");
     return $opcao . PHP_EOL;
 }
@@ -238,6 +282,13 @@ while (true) {
             itens($estoque);
             break;
         case 7:
+            echo "Atualizar Estoque\n";
+            $sku = readline("Digite o SKU do produto: \n");
+            $adicao = readline("Digite o valor que deseja atualizar pro estoque do produto: \n");
+            atualizarEstoque($estoque, $sku, $adicao);
+            break;
+        case 8:
+
             echo "Saindo...\n";
             exit; // Sai do loop e encerra o script
         default:

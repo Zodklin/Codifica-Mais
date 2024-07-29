@@ -1,6 +1,6 @@
 <?php
 
-namespace VEICULOS\src;
+namespace src;
 
 interface VeiculoInterface{
     public function acelerar();

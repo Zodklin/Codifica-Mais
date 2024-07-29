@@ -1,9 +1,9 @@
 <?php
-namespace VEICULOS\src;
+namespace src;
 
-require_once __DIR__ . '\autoload.php';
+require_once __DIR__ . '/autoload.php';
 
-abstract class Carro extends Veiculo {
+Class Carro extends Veiculo implements VeiculoInterface{
     public function abrirPorta() {
         echo "Carro está com a porta aberta" . PHP_EOL;
     }
@@ -31,10 +31,3 @@ abstract class Carro extends Veiculo {
         echo "------------------------------" . PHP_EOL;
     }
 }
-
-$carro1 = new Carro("Nissan", "Sentra", 2013);
-$carro1->abrirPorta();
-$carro1->rodas(4);
-$carro1->acelerar();
-$carro1->frear();
-$carro1->exibirDetalhes();

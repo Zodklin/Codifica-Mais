@@ -1,6 +1,6 @@
 <?php
 
-namespace VEICULOS\src;
+namespace src;
 
 abstract class Veiculo{
     protected $nome;

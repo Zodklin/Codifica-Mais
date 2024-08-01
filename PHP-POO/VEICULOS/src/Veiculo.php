@@ -1,6 +1,8 @@
 <?php
 
-class Veiculo{
+namespace src;
+
+abstract class Veiculo{
     protected $nome;
     protected $modelo;
     protected $ano;
@@ -23,6 +25,8 @@ class Veiculo{
     public function rodas($rodas){
         
     }
+
+    abstract public function exibirDetalhes();
 
     
 }

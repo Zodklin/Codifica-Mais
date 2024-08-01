@@ -7,4 +7,3 @@ $carro2 = new Carro("Ford", 2007, "Focus");
 
 $carro1->acelerar("S") . PHP_EOL;
 $carro2->frear();
-

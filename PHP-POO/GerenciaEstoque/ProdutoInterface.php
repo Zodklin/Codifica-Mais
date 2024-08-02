@@ -4,14 +4,11 @@ namespace GerenciaEstoque;
 
 interface ProdutoInterface{
     function limiteDesconto($percentDesconto);
-
-    function getSku();
-
+    function getCodigoProduto();
     function getNome();
-
     function getQuantidade();
-
-    function getUnidadeMedida();
-
     function getPreco();
+    function setNome($nome);
+    function setQuantidade($quantidade);
+    function setPreco($preco);
 }

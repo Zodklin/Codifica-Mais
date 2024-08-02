@@ -3,42 +3,49 @@
 namespace GerenciaEstoque;
 
 class Produto implements ProdutoInterface{
-    protected int $sku;
+    protected int $codigoProduto;
     protected string $nome;
     protected int $quantidade;
-    protected string $unidadeDeMedida;
     protected float $preco;
 
-    function __construct(int $sku, string $nome, int $quantidade, string $unidadeDeMedida, float $preco)
+    function __construct(int $codigoProduto, string $nome, int $quantidade, float $preco)
     {
-        $this->sku = $sku;
+        $this->codigoProduto = $codigoProduto;
         $this->nome = $nome;
         $this->quantidade = $quantidade;
-        $this->unidadeDeMedida = strtoupper($unidadeDeMedida);
         $this->preco = $preco;
     }
 
-    public function getSku(){
-        echo "O SKU desse produto é: " . $this->sku;
+    public function getCodigoProduto(){
+        return $this->codigoProduto;
     }
 
     public function getNome(){
-        echo "O nome desse produto é: " . $this->nome;
+        return $this->nome;
     }
 
     public function getQuantidade(){
-        echo "Esse produto tem " . $this->quantidade . "unidades";
-    }
-
-    public function getUnidadeMedida(){
-        echo "A unidade de medida desse produto é: " . $this->unidadeDeMedida;
+        return $this->quantidade;
     }
 
     public function getPreco(){
-        echo $this->preco . "R$";
+        return $this->preco;
+    }
+
+    public function setNome($nome){
+        $this->nome = $nome;
+    }
+
+    public function setPreco($preco){
+        $this->preco = $preco;
+    }
+
+    public function setQuantidade($quantidade)
+    {
+        $this->quantidade = $quantidade;
     }
     
-    public function promocao($percentDesconto)
+    public function limiteDesconto($percentDesconto)
     {
         
     }

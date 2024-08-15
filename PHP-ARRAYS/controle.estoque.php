@@ -112,7 +112,7 @@ function listarEstoque(&$estoque){
         echo "Preço: " . $i['preco'] . PHP_EOL;
         echo "===========================================" . PHP_EOL;
     }
-};
+}
 
 // Função para vender um produto
 function venderProduto(&$estoque, $sku, $quantidade){
@@ -176,7 +176,7 @@ function deletarProduto(&$estoque, $sku){
     unset($estoque[$key]);
     echo "Produto deletado com sucesso\n";
     return;
-}
+    }};
 
 // Função para verificar o estoque 
 function verificarEstoque (&$estoque, $sku){
@@ -294,5 +294,5 @@ while (true) {
         default:
             echo "Opção inválida, por favor tente novamente.\n";
             break;
-    }
+    };
 }

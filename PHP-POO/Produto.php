@@ -18,9 +18,9 @@ class Produto{
             echo "Não é possível alterar o preço para o mesmo valor.";
         } else {
             $this->preco = $novoPreco;
-            echo "Preço alterado com sucesso!" . PHP_EOL;
+            echo "Preço alterado com sucesso!";
         } 
-        echo "Novo preço é de: " . $this->preco . "R$" . PHP_EOL;
+        echo "Novo preço é de: " . $this->preco . "R$";
     } 
 
     public function ajustarEstoque($quantidade, $tipo){
@@ -29,23 +29,17 @@ class Produto{
                 echo "Quantidade em estoque indisponível" . PHP_EOL;
             } else {
                 $this->qtEstoque -= $quantidade;
-                echo "Estoque atual: " . $this->qtEstoque . PHP_EOL;
+                echo "Estoque atual: " . $this->qtEstoque;
             }
         } else if ($tipo == "+"){
             if ($quantidade <= 0){
-                echo "Não é possível adicionar essa quantidade." . PHP_EOL;
+                echo "Não é possível adicionar essa quantidade.";
             } else {
                 $this->qtEstoque += $quantidade;
-                echo "Estoque atual: " . $this->qtEstoque . PHP_EOL;
+                echo "Estoque atual: " . $this->qtEstoque;
             } 
         } else {
             echo "Opção não disponível";
         }
-    }
-
-    public function exibirDetalhes(){
-        echo $this->nome . PHP_EOL;
-        echo $this->preco . PHP_EOL; 
-        echo $this->qtEstoque . PHP_EOL; 
     }
 }

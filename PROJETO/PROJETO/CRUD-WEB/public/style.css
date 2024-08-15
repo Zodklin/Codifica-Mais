@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fabe2847;
+}
+
+.card-principal{
+    height: 550px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.input-procurar{
+    display: flex;
+    flex-direction: column;
+}
+
+.novo-item{
+    margin: 20px;
+    background-color: #88c100;
+    padding: 10px 0px 10px 0px;
+    border-radius: 7px;
+    width: 150px;
+    border: none;
+    transition: box-shadow .3s;
+}
+
+.novo-item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.div-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.procurar{
+   border-radius: 7px;
+   display:flex;
+   flex-direction:column;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 20px 40px 20px;
+    border-radius: 10px;
+    transition: box-shadow .3s;
+}
+
+.item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.item-conteudo{
+    margin: 10px
+}
+
+.codigo{
+    color: grey;
+    font-weight: 300;
+}
+
+.tipo{
+    background-color: #ff8a00;
+    padding: 0px 15px 0px 15px;
+    border-radius: 7px;
+}
+
+.item-nome{
+    font-size: medium;
+    margin-top: 5px;
+}
+
+
+.editar{
+    margin-top: 10px;
+    padding: 0px 25px 0px 25px;
+    background-color: #00c176;
+    border-radius: 7px;
+    border: none;
+}
+
+.editar:hover{
+    box-shadow: 0px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.deletar{
+    margin-top: 10px;
+    padding: 0px 25px 0px 25px;
+    background-color: #ff003c;
+    border-radius: 7px;
+    margin-left: 25px;
+    border: none;
+}
+
+.sku{
+    font-size: medium;
+    margin-top: 5px;
+}
+
+.quantidade{
+    font-size: medium;
+    margin-top: 5px;
+}

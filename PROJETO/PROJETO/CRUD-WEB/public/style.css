@@ -12,15 +12,22 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #fabe2847;
+    background-image: url(img/17580.jpg);
 }
 
 .card-principal{
     height: 550px;
     width: 500px;
     border-radius: 10px;
-    background-color: white;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background-color: white;
+    overflow: hidden;
+    padding-bottom: 12px;
+}
+
+.lista-itens{
+    height: 80%;
+    overflow: auto;
 }
 
 .input-procurar{
@@ -30,12 +37,13 @@
 
 .novo-item{
     margin: 20px;
-    background-color: #88c100;
+    background-color: #0077b5;
     padding: 10px 0px 10px 0px;
     border-radius: 7px;
     width: 150px;
     border: none;
     transition: box-shadow .3s;
+    color: white;
 }
 
 .novo-item:hover{
@@ -45,9 +53,10 @@
 .div-header{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .procurar{
@@ -60,9 +69,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 20px 20px 40px 20px;
+    margin: 20px 20px 20px 20px;
     border-radius: 10px;
     transition: box-shadow .3s;
+    border: 1px solid rgba(0, 0, 0, 0.166);
+    padding: 20px 0px 20px 0px;
 }
 
 .item:hover{
@@ -79,7 +90,7 @@
 }
 
 .tipo{
-    background-color: #ff8a00;
+    background-color: #c2c2c284;
     padding: 0px 15px 0px 15px;
     border-radius: 7px;
 }
@@ -92,10 +103,11 @@
 
 .editar{
     margin-top: 10px;
-    padding: 0px 25px 0px 25px;
-    background-color: #00c176;
+    padding: 5px 20px 5px 20px;
+    background-color: #0077b5;
     border-radius: 7px;
     border: none;
+    color: white;
 }
 
 .editar:hover{
@@ -111,6 +123,8 @@
     border-radius: 7px;
     margin-left: 25px;
     border: none;
+    color: white;
+    padding: 5px 10px 5px 10px;
 }
 
 .sku{
@@ -121,4 +135,13 @@
 .quantidade{
     font-size: medium;
     margin-top: 5px;
+}
+
+.divisor{
+    display: flex;
+    justify-content: center;
+}
+
+.divisor hr{
+    width: 300px;
 }

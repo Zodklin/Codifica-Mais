@@ -21,46 +21,57 @@ session_start();
                         <label for="procurar" class="procurar">Buscar item:</label>
                         <input type="text" id="procurar" class="procurar">
                     </div>
-                </div>
-                <div class="item">
-                <section class="item-conteudo">
-                        <span class="codigo">#000000</span>
-                        <span class="tipo">Vestuario</span>
-                        <h2 class="item-nome">Camisa Codifica+</h2>
-                        <button class="editar">Editar</button>
+                    <section>
+                        Produtos em estoque:
                     </section>
+                </div>
+                <div class="lista-itens">
+                    <div class="item">
                     <section class="item-conteudo">
-                        <p class="sku">SKU: 123456</p>
-                        <h2 class="quantidade">Quantidade: 100</h2>
-                        <button class="deletar">Deletar</button>
-                    </section>
-                </div>
-                <div class="item">
-                <section class="item-conteudo">
-                        <span class="codigo">#000002</span>
-                        <span class="tipo">Eletrônico</span>
-                        <h2 class="item-nome">Notebook</h2>
-                        <button class="editar">Editar</button>
-                    </section>
+                            <span class="codigo">#000001</span>
+                            <span class="tipo">Vestuario</span>
+                            <h2 class="item-nome">Camisa Codifica+</h2>
+                            <button class="editar">Editar</button>
+                        </section>
+                        <section class="item-conteudo">
+                            <p class="sku">SKU: 123456</p>
+                            <h2 class="quantidade">Quantidade: 100</h2>
+                            <button class="deletar">Deletar</button>
+                        </section>
+                    </div>
+                    <div class="divisor">
+                        <hr>
+                    </div>
+                        <div class="item">
                     <section class="item-conteudo">
-                        <p class="sku">SKU: 123456</p>
-                        <h2 class="quantidade">Quantidade: 45</h2>
-                        <button class="deletar">Deletar</button>
-                    </section>
-                </div>
-                <div class="item">
-                <section class="item-conteudo">
-                        <span class="codigo">#000003</span>
-                        <span class="tipo">Escritório</span>
-                        <h2 class="item-nome">Caderno de anotação</h2>
-                        <button class="editar">Editar</button>
-                    </section>
+                            <span class="codigo">#000002</span>
+                            <span class="tipo">Eletrônico</span>
+                            <h2 class="item-nome">Notebook</h2>
+                            <button class="editar">Editar</button>
+                        </section>
+                        <section class="item-conteudo">
+                            <p class="sku">SKU: 123456</p>
+                            <h2 class="quantidade">Quantidade: 45</h2>
+                            <button class="deletar">Deletar</button>
+                        </section>
+                    </div>
+                    <div class="divisor">
+                        <hr>
+                    </div>
+                    <div class="item">
                     <section class="item-conteudo">
-                        <p class="sku">SKU: 123456</p>
-                        <h2 class="quantidade">Quantidade: 15</h2>
-                        <button class="deletar">Deletar</button>
-                    </section>
-                </div>
+                            <span class="codigo">#000003</span>
+                            <span class="tipo">Escritório</span>
+                            <h2 class="item-nome">Caderno de anotação</h2>
+                            <button class="editar">Editar</button>
+                        </section>
+                        <section class="item-conteudo">
+                            <p class="sku">SKU: 123456</p>
+                            <h2 class="quantidade">Quantidade: 15</h2>
+                            <button class="deletar">Deletar</button>
+                        </section>
+                    </div>
+                </div> 
             </div>
     </div>
 </body>

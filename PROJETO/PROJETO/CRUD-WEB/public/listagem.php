@@ -16,7 +16,7 @@ session_start();
     <div class="container">
             <div class="card-principal">
                 <div class="div-header">
-                    <button class="novo-item">Novo Item</button>
+                    <a href="adicionar.php"><button class="novo-item">Novo Item</button></a>
                     <div class="input-procurar">
                         <label for="procurar" class="procurar">Buscar item:</label>
                         <input type="text" id="procurar" class="procurar">
@@ -31,7 +31,7 @@ session_start();
                             <span class="codigo">#000001</span>
                             <span class="tipo">Vestuario</span>
                             <h2 class="item-nome">Camisa Codifica+</h2>
-                            <button class="editar">Editar</button>
+                            <a href="editar.php"><button class="editar">Editar</button></a>
                         </section>
                         <section class="item-conteudo">
                             <p class="sku">SKU: 123456</p>
@@ -47,7 +47,7 @@ session_start();
                             <span class="codigo">#000002</span>
                             <span class="tipo">Eletrônico</span>
                             <h2 class="item-nome">Notebook</h2>
-                            <button class="editar">Editar</button>
+                            <a href="editar.php"><button class="editar">Editar</button></a>
                         </section>
                         <section class="item-conteudo">
                             <p class="sku">SKU: 123456</p>
@@ -63,7 +63,7 @@ session_start();
                             <span class="codigo">#000003</span>
                             <span class="tipo">Escritório</span>
                             <h2 class="item-nome">Caderno de anotação</h2>
-                            <button class="editar">Editar</button>
+                            <a href="editar.php"><button class="editar">Editar</button></a>
                         </section>
                         <section class="item-conteudo">
                             <p class="sku">SKU: 123456</p>

@@ -25,6 +25,12 @@
     padding-bottom: 12px;
 }
 
+.voltar{
+    margin: 15px 15px 0px 25px;
+    color: red;
+    text-decoration: none;
+}
+
 .lista-itens{
     height: 80%;
     overflow: auto;
@@ -48,6 +54,7 @@
 
 .novo-item:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2);
+    cursor: pointer;
 }
 
 .div-header{
@@ -144,4 +151,83 @@
 
 .divisor hr{
     width: 300px;
+}
+
+.titulo-novo-item{
+    margin: 20px;
+}
+
+.input-nome-item{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:column;
+    width: 90%;
+    margin: 20px 0px 30px 30px;
+}
+
+.input-sku-unidade{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:row;
+    width: 90%;
+    margin-left: 30px;
+    justify-content: space-around;
+    margin: 20px 0px 30px 30px;
+    
+}
+
+.SKU{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.unidade{
+    width: 200px;
+}
+
+.input-valor-quantidade{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:row;
+    width: 90%;
+    margin-left: 30px;
+    justify-content: space-around;
+    margin: 20px 0px 30px 30px;
+}
+
+.valor{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.quantidade-adicionar{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.categoria-adicionar{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:column;
+    width: 33%;
+    margin: 20px 0px 30px 30px;
+    width: 220px;
+}
+
+
+.cria-item{
+    margin-left: 30px;
+    background-color: #0077b5;
+    padding: 10px 0px 10px 0px;
+    border-radius: 7px;
+    width: 150px;
+    border: none;
+    transition: box-shadow .3s;
+    color: white;
+    margin-top: 50px;
+}
+
+.cria-item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    cursor: pointer;
 }

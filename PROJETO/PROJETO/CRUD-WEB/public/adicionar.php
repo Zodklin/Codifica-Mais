@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+require_once '../vendor/autoload.php';
+use App\Produtos;
+$controlador = new Produtos();
+if (!empty($_POST)) {
+    $controlador->criar($_POST);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +22,7 @@ session_start();
         <div class="card-principal">
             <div class="voltar"><a href="listagem.php" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></i></a></div>
             <h1 class="titulo-novo-item">Novo Item</h1>
-            <form>
+            <form method="POST" action="">
                 <div class="input-nome-item">
                     <label for="nome-item" class="nome-item">Nome do Item</label>
                     <input type="text" name="nome-item" class="nome-item" required>

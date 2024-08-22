@@ -2,6 +2,8 @@
     // Inicia a sessão
     session_start();
 
+    require '../vendor/autoload.php';
+
     // Define o array de categorias, unidades de medida e produtos
     $_SESSION['categorias'] = [
         '1' => 'Eletrônicos',

@@ -38,7 +38,7 @@ $unidadesMedidas = $_SESSION['unidades_medidas'];
                         <span class="codigo">#00000<?=$produto['id']?></span>
                         <span class="tipo"><?=$_SESSION['categorias'][$produto['categoria_id']]?></span>
                         <h2 class="item-nome"><?=$produto['nome']?></h2>
-                        <a href="editar.php"><button class="editar">Editar</button></a>
+                        <a href="editar.php?id=<?=$produto['id']?>"><button class="editar">Editar</button></a>
                     </section>
                     <section class="item-conteudo">
                         <p class="sku">SKU: <?=$produto['sku']?></p>

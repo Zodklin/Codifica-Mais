@@ -50,12 +50,12 @@ if (!empty($_POST)) {
                 <div class="categoria-adicionar">
                     <label for="categoria-adicionar">Categoria</label>
                     <select name="categoria-adicionar" class="categora-adicionar">
-                        <option value="eletronicos">Eletrônicos</option>
-                        <option value="eletrodomesticos">Eletrodomésticos</option>
-                        <option value="moveis">Móveis</option>
-                        <option value="decoracao">Decoração</option>
-                        <option value="vestuario">Vestuário</option>
-                        <option value="outros">Outros</option>
+                        <option value="1">Eletrônicos</option>
+                        <option value="2">Eletrodomésticos</option>
+                        <option value="3">Móveis</option>
+                        <option value="4">Decoração</option>
+                        <option value="5">Vestuário</option>
+                        <option value="7">Outros</option>
                     </select>
                 </div>
                 <button class="cria-item">Criar item</button>

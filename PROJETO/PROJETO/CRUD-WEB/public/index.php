@@ -44,7 +44,7 @@
         ],
     ];
 
+
     // Redireciona para a página de listagem
     header('Location: listagem.php');
-
 ?>

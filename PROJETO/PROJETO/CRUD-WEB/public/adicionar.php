@@ -61,7 +61,6 @@ if (!empty($_POST)) {
                 <button class="cria-item">Criar item</button>
             </form>
         </div>
-
     </div>
 </body>
 </html>

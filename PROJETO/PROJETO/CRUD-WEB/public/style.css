@@ -124,14 +124,21 @@
 }
 
 .deletar{
-    margin-top: 10px;
-    padding: 0px 25px 0px 25px;
     background-color: #ff003c;
     border-radius: 7px;
-    margin-left: 25px;
     border: none;
     color: white;
     padding: 5px 10px 5px 10px;
+    width: 70px;
+    margin-top: 7px;
+}
+
+.deletar:focus{
+    outline: none;
+}
+
+.deletar:hover{
+    cursor: pointer;
 }
 
 .sku{
@@ -172,7 +179,7 @@
     width: 90%;
     margin-left: 30px;
     justify-content: space-around;
-    margin: 20px 0px 30px 30px;
+    margin: 40px 0px 30px 30px;
     
 }
 
@@ -206,12 +213,21 @@
 }
 
 .categoria-adicionar{
-    border-radius: 7px;
     display:flex;
     flex-direction:column;
-    width: 33%;
-    margin: 20px 0px 30px 30px;
-    width: 220px;
+    width: 210px;
+    margin: 0px 0px 20px 15px;
+}
+
+.label-categoria-adicionar{
+    margin-left: 13.5px;
+}
+
+.unidade-medida-adicionar{
+    display:flex;
+    flex-direction:column;
+    width: 210px;
+
 }
 
 

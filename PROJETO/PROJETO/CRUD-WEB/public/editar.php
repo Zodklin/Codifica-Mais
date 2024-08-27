@@ -39,8 +39,17 @@ if (!empty($_POST)) {
                         <input type="text" name="SKU" class="SKU" value="<?= ($produto['sku']) ?>" required>
                     </div>
                     <div class="unidade-medida">
-                        <label for="unidade" class="unidade">Unidade de Medida</label>
-                        <input type="text" name="unidade" class="unidade" value="<?= ($produto['unidade_medida_id']) ?>" required>
+                        <label for="unidade-medida-adicionar" class="unidade-medida-adicionar">Unidade de Medida</label>
+                        <select name="unidade-medida-adicionar" class="unidade-medida-adicionar">
+                            <option value="1" <?= $produto['unidade_medida_id'] == 1 ? 'selected' : '' ?>>Un</option>
+                            <option value="2" <?= $produto['unidade_medida_id'] == 2 ? 'selected' : '' ?>>Kg</option>
+                            <option value="3" <?= $produto['unidade_medida_id'] == 3 ? 'selected' : '' ?>>g</option>
+                            <option value="4" <?= $produto['unidade_medida_id'] == 4 ? 'selected' : '' ?>>L</option>
+                            <option value="5" <?= $produto['unidade_medida_id'] == 5 ? 'selected' : '' ?>>mm</option>
+                            <option value="6" <?= $produto['unidade_medida_id'] == 6 ? 'selected' : '' ?>>cm</option>
+                            <option value="7" <?= $produto['unidade_medida_id'] == 7 ? 'selected' : '' ?>>m</option>
+                            <option value="8" <?= $produto['unidade_medida_id'] == 8 ? 'selected' : '' ?>>m²</option>
+                    </select>
                     </div>
                 </div>
                 <div class="input-valor-quantidade">
@@ -54,7 +63,7 @@ if (!empty($_POST)) {
                     </div>
                 </div>
                 <div class="categoria-adicionar">
-                    <label for="categoria-adicionar">Categoria</label>
+                    <label for="categoria-adicionar" class="label-categoria-adicionar">Categoria</label>
                     <select name="categoria-adicionar" class="categoria-adicionar">
                         <option value="1" <?= $produto['categoria_id'] == 1 ? 'selected' : '' ?>>Eletrônicos</option>
                         <option value="2" <?= $produto['categoria_id'] == 2 ? 'selected' : '' ?>>Eletrodomésticos</option>

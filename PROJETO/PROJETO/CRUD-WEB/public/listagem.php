@@ -2,7 +2,6 @@
 session_start();
 require_once '../vendor/autoload.php';
 use App\Produtos;
-
 $controlador = new Produtos;
 $produtos = $controlador->listar();
 $categorias = $_SESSION['categorias'];
@@ -42,7 +41,7 @@ $unidadesMedidas = $_SESSION['unidades_medidas'];
                     <section class="item-conteudo">
                         <p class="sku">SKU: <?= ($produto['sku']) ?></p>
                         <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
-                        <button class="deletar">Deletar</button>
+                        <button onclick="<?php $controlador->deletar($produto['id'])?>" class="deletar">deletar</button>
                     </section>
                 </div>
                 <div class="divisor">

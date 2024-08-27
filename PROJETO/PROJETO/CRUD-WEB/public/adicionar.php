@@ -5,6 +5,8 @@ use App\Produtos;
 $controlador = new Produtos();
 if (!empty($_POST)) {
     $controlador->criar($_POST);
+    header('Location: listagem.php');
+    exit();
 }
 ?>
 
@@ -34,7 +36,16 @@ if (!empty($_POST)) {
                     </div>
                     <div class="unidade-medida">
                         <label for="unidade" class="unidade">Unidade de Medida</label>
-                        <input type="text" name="unidade" class="unidade" required>
+                        <select name="unidade-medida-adicionar" class="unidade-medida-adicionar">
+                            <option value="1">Un</option>
+                            <option value="2">Kg</option>
+                            <option value="3">g</option>
+                            <option value="4">L</option>
+                            <option value="5">mm</option>
+                            <option value="6">cm</option>
+                            <option value="7">m</option>
+                            <option value="8">m²</option>
+                        </select>
                     </div>
                 </div>
                 <div class="input-valor-quantidade">
@@ -48,8 +59,8 @@ if (!empty($_POST)) {
                     </div>
                 </div>
                 <div class="categoria-adicionar">
-                    <label for="categoria-adicionar">Categoria</label>
-                    <select name="categoria-adicionar" class="categora-adicionar">
+                    <label for="categoria-adicionar" class="label-categoria-adicionar">Categoria</label>
+                    <select name="categoria-adicionar" class="categoria-adicionar">
                         <option value="1">Eletrônicos</option>
                         <option value="2">Eletrodomésticos</option>
                         <option value="3">Móveis</option>

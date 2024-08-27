@@ -51,9 +51,9 @@ class Produtos
 
     public function deletar($id)
     {
-        foreach ($_SESSION['produtos'] as &$produto){
+        foreach ($_SESSION['produtos'] as $ind => $produto){
             if ($produto['id'] == $id){
-                unset($produto);
+                unset($_SESSION['produtos'][$ind]);
             }
         }
     }

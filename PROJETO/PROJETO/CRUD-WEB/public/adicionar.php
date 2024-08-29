@@ -1,14 +1,4 @@
-<?php
-session_start();
-require_once '../vendor/autoload.php';
-use App\Produtos;
-$controlador = new Produtos();
-if (!empty($_POST)) {
-    $controlador->criar($_POST);
-    header('Location: listagem.php');
-    exit();
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,17 +7,17 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Listagem de produtos</title>
+    <title>Adicionar produto</title>
 </head>
 <body>
     <div class="container">
         <div class="card-principal">
-            <div class="voltar"><a href="listagem.php" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></i></a></div>
-            <h1 class="titulo-novo-item">Novo Item</h1>
+            <div class="voltar"><a href="/listagem" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></i></a></div>
+            <h1 class="titulo-novo-item"><?php  echo isset($produtoSelecionado) ? "Editar" : "Adicionar"; ?></h1>
             <form method="POST" action="">
                 <div class="input-nome-item">
-                    <label for="nome-item" class="nome-item">Nome do Item</label>
-                    <input type="text" name="nome-item" class="nome-item" required>
+                    <label for="nome-item" class="nome-item" >Nome do Item</label>
+                    <input type="text" name="nome-item" class="nome-item"  value="<?php  echo isset($produtoSelecionado) ? $produtoSelecionado['nome'] : ""; ?>">
                 </div>
                 <div class="input-sku-unidade">
                     <div class="SKU">
@@ -69,7 +59,7 @@ if (!empty($_POST)) {
                         <option value="7">Outros</option>
                     </select>
                 </div>
-                <button class="cria-item">Criar item</button>
+                <button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>
             </form>
         </div>
     </div>

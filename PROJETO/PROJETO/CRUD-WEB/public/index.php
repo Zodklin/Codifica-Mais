@@ -4,6 +4,10 @@
 
     require '../vendor/autoload.php';
 
+    use App\Produtos;
+
+    $rotas = new Produtos();
+
     // Define o array de categorias, unidades de medida e produtos
     $_SESSION['categorias'] = [
         '1' => 'Eletrônicos',
@@ -44,7 +48,25 @@
         ],
     ];
 
+    $uri = strtok($_SERVER['REQUEST_URI'], '?');
+    $page = rtrim($uri, '/') ?: '/';
+    switch ($page)
+    {
+        case "/listagem": 
+            $rotas->listar();
+            break;
+        
+        case "/criar":
+            $rotas->criar();
+            break;
 
-    // Redireciona para a página de listagem
-    header('Location: listagem.php');
+        case "/editar":
+            $rotas->editar($_GET['id']);
+            break;
+        
+
+        default:
+            echo "Página não encontrada";
+
+    }
 ?>

@@ -6,32 +6,32 @@ class Produtos
 {
     public function listar()
     {
-        return $_SESSION['produtos'];
+        require "../public/listagem.php";
     }
 
-    public function criar(array $dados)
+    public function criar()
     {
-        $ultimo = end($_SESSION['produtos']);
-        $ultimoId = $ultimo['id'] + 1;
 
-        $_SESSION['produtos'][] = [
-            'id' => $ultimoId,
-            'nome' => $dados['nome-item'],
-            'sku' => $dados['SKU'],
-            'unidade_medida_id' => $dados['unidade-medida-adicionar'],
-            'valor' => $dados['valor'],
-            'quantidade' => $dados['quantidade-adicionar'],
-            'categoria_id' => $dados['categoria-adicionar'],
-        ];
+        require "../public/adicionar.php";
+        // $ultimo = end($_SESSION['produtos']);
+        // $ultimoId = $ultimo['id'] + 1;
+
+        // $_SESSION['produtos'][] = [
+        //     'id' => $ultimoId,
+        //     'nome' => $dados['nome-item'],
+        //     'sku' => $dados['SKU'],
+        //     'unidade_medida_id' => $dados['unidade-medida-adicionar'],
+        //     'valor' => $dados['valor'],
+        //     'quantidade' => $dados['quantidade-adicionar'],
+        //     'categoria_id' => $dados['categoria-adicionar'],
+        // ];
     }
 
     public function editar($id)
     {
-        foreach ($_SESSION['produtos'] as $produto) {
-            if ($produto['id'] == $id) {
-                return $produto;
-            }
-        }
+        $produtoSelecionado = $_SESSION['produtos'][$id -1];
+        var_dump($produtoSelecionado);
+        require "../public/adicionar.php";
     }
 
     public function salvar(array $dados, $id)

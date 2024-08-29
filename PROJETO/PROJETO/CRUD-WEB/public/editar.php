@@ -26,7 +26,7 @@ if (!empty($_POST)) {
 <body>
     <div class="container">
         <div class="card-principal">
-            <div class="voltar"><a href="listagem.php" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></a></div>
+            <div class="voltar"><a href="\listagem" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></a></div>
             <h1 class="titulo-novo-item">Atualizar Item</h1>
             <form method="POST" action="">
                 <div class="input-nome-item">

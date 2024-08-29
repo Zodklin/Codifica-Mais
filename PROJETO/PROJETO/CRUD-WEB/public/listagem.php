@@ -1,13 +1,3 @@
-<?php
-session_start();
-require_once '../vendor/autoload.php';
-use App\Produtos;
-$controlador = new Produtos;
-$produtos = $controlador->listar();
-$categorias = $_SESSION['categorias'];
-$unidadesMedidas = $_SESSION['unidades_medidas'];
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +10,7 @@ $unidadesMedidas = $_SESSION['unidades_medidas'];
     <div class="container">
         <div class="card-principal">
             <div class="div-header">
-                <a href="adicionar.php"><button class="novo-item">Novo Item</button></a>
+                <a href="\criar"><button class="novo-item">Novo Item</button></a>
                 <div class="input-procurar">
                     <label for="procurar" class="procurar">Buscar item:</label>
                     <input type="text" id="procurar" class="procurar">
@@ -30,18 +20,21 @@ $unidadesMedidas = $_SESSION['unidades_medidas'];
                 </section>
             </div>
             <div class="lista-itens">
-            <?php foreach ($produtos as $produto): ?>    
+            <?php foreach ($_SESSION['produtos'] as $produto): ?>    
                 <div class="item">
                     <section class="item-conteudo">
                         <span class="codigo">#00000<?= ($produto['id']) ?></span>
-                        <span class="tipo"><?= ($categorias[$produto['categoria_id']]) ?></span>
+                        <span class="tipo"><?= ($_SESSION['categorias'][$produto['categoria_id']]) ?></span>
                         <h2 class="item-nome"><?= ($produto['nome']) ?></h2>
-                        <a href="editar.php?id=<?= ($produto['id']) ?>"><button class="editar">Editar</button></a>
+                        <a href="\editar?id=<?= ($produto['id']) ?>"><button class="editar">Editar</button></a>
                     </section>
                     <section class="item-conteudo">
                         <p class="sku">SKU: <?= ($produto['sku']) ?></p>
                         <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
-                        <button onclick="<?php $controlador->deletar($produto['id'])?>" class="deletar">deletar</button>
+                        <form action="listagem.php" method="POST">
+                            <input type="hidden" name="id" value="<?=$produto['id']?>">
+                            <button class="deletar">deletar</button>
+                        </form>
                     </section>
                 </div>
                 <div class="divisor">

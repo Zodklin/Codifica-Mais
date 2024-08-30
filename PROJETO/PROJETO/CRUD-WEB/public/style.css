@@ -190,6 +190,7 @@
 
 .unidade{
     width: 200px;
+    margin-top: 100px;
 }
 
 .input-valor-quantidade{
@@ -227,6 +228,9 @@
     display:flex;
     flex-direction:column;
     width: 210px;
+    margin-top: 11px;
+    height: 28px;
+    padding: 2px;
 
 }
 

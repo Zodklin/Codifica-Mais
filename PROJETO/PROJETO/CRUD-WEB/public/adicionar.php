@@ -22,41 +22,41 @@
                 <div class="input-sku-unidade">
                     <div class="SKU">
                         <label for="SKU" class="SKU">SKU</label>
-                        <input type="text" name="SKU" class="SKU" required>
+                        <input type="text" name="SKU" class="SKU" required value="<?php echo isset($produtoSelecionado) ? $produtoSelecionado['sku'] : ""; ?>">
                     </div>
                     <div class="unidade-medida">
                         <label for="unidade" class="unidade">Unidade de Medida</label>
                         <select name="unidade-medida-adicionar" class="unidade-medida-adicionar">
-                            <option value="1">Un</option>
-                            <option value="2">Kg</option>
-                            <option value="3">g</option>
-                            <option value="4">L</option>
-                            <option value="5">mm</option>
-                            <option value="6">cm</option>
-                            <option value="7">m</option>
-                            <option value="8">m²</option>
+                            <option value="1" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 1 ? 'selected' : ""; ?>>Un</option>
+                            <option value="2" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 2 ? 'selected' : ""; ?>>Kg</option>
+                            <option value="3" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 3 ? 'selected' : ""; ?>>g</option>
+                            <option value="4" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 4 ? 'selected' : ""; ?>>L</option>
+                            <option value="5" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 5 ? 'selected' : ""; ?>>mm</option>
+                            <option value="6" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 6 ? 'selected' : ""; ?>>cm</option>
+                            <option value="7" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 7 ? 'selected' : ""; ?>>m</option>
+                            <option value="8" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 8 ? 'selected' : ""; ?>>m²</option>
                         </select>
                     </div>
                 </div>
                 <div class="input-valor-quantidade">
                     <div class="valor">
                         <label for="valor" class="valor">Valor</label>
-                        <input type="text" name="valor" class="valor" placeholder="0,00" required>
+                        <input type="text" name="valor" class="valor" placeholder="0,00" required value="<?php echo isset($produtoSelecionado) ? $produtoSelecionado['valor'] : ""; ?>">
                     </div>
                     <div class="quantidade-adicionar">
                         <label for="quantidade-adicionar" class="quantidade-adicionar">Quantidade</label>
-                        <input type="text" name="quantidade-adicionar" class="quantidade-adicionar" required>
+                        <input type="text" name="quantidade-adicionar" class="quantidade-adicionar" required value="<?php echo isset($produtoSelecionado) ? $produtoSelecionado['quantidade'] : ""; ?>">
                     </div>
                 </div>
                 <div class="categoria-adicionar">
                     <label for="categoria-adicionar" class="label-categoria-adicionar">Categoria</label>
                     <select name="categoria-adicionar" class="categoria-adicionar">
-                        <option value="1">Eletrônicos</option>
-                        <option value="2">Eletrodomésticos</option>
-                        <option value="3">Móveis</option>
-                        <option value="4">Decoração</option>
-                        <option value="5">Vestuário</option>
-                        <option value="7">Outros</option>
+                        <option value="1" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 1 ? 'selected' : ""; ?>>Eletrônicos</option>
+                        <option value="2" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 2 ? 'selected' : ""; ?>>Eletrodomésticos</option>
+                        <option value="3" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 3 ? 'selected' : ""; ?>>Móveis</option>
+                        <option value="4" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 4 ? 'selected' : ""; ?>>Decoração</option>
+                        <option value="5" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 5 ? 'selected' : ""; ?>>Vestuário</option>
+                        <option value="7" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 7 ? 'selected' : ""; ?>>Outros</option>
                     </select>
                 </div>
                 <button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>

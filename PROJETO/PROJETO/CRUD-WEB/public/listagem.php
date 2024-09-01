@@ -31,9 +31,8 @@
                     <section class="item-conteudo">
                         <p class="sku">SKU: <?= ($produto['sku']) ?></p>
                         <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
-                        <form action="listagem.php" method="POST">
-                            <input type="hidden" name="id" value="<?=$produto['id']?>">
-                            <button class="deletar">deletar</button>
+                        <form action="listagem" method="POST">
+                            <a href="/deletar?id=<?= ($produto['id'])?>"><button class="deletar">deletar</button></a>
                         </form>
                     </section>
                 </div>

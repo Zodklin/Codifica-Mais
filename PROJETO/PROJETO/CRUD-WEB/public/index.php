@@ -63,7 +63,18 @@
         case "/editar":
             $rotas->editar($_GET['id']);
             break;
+
+        case "/atualizar":
+            $rotas->atualizar($POST);
+            break;
         
+        case "/salvar":
+            $rotas->salvar($_POST, $_SESSION['produto'['id']]);
+            break;
+        
+        case "/deletar":
+            $rotas->deletar($id);
+            break;
 
         default:
             echo "Página não encontrada";

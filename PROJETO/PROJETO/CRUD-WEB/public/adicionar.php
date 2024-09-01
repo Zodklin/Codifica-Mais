@@ -14,7 +14,7 @@
         <div class="card-principal">
             <div class="voltar"><a href="/listagem" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></i></a></div>
             <h1 class="titulo-novo-item"><?php  echo isset($produtoSelecionado) ? "Editar" : "Adicionar"; ?></h1>
-            <form method="POST" action="">
+            <form method="POST" action="/listagem">
                 <div class="input-nome-item">
                     <label for="nome-item" class="nome-item" >Nome do Item</label>
                     <input type="text" name="nome-item" class="nome-item"  value="<?php  echo isset($produtoSelecionado) ? $produtoSelecionado['nome'] : ""; ?>">
@@ -59,7 +59,7 @@
                         <option value="7" <?php echo isset($produtoSelecionado) && $produtoSelecionado['unidade_medida_id'] == 7 ? 'selected' : ""; ?>>Outros</option>
                     </select>
                 </div>
-                <button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>
+                <a href="<?php echo isset($produtoSelecionado) ? "/atualizar" : "/salvar"; ?>"><button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button></a>
             </form>
         </div>
     </div>

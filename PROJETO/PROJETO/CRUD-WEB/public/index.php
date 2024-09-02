@@ -50,6 +50,8 @@
 
     $uri = strtok($_SERVER['REQUEST_URI'], '?');
     $page = rtrim($uri, '/') ?: '/';
+    // var_dump($page);
+    // die();
     switch ($page)
     {
         case "/listagem": 
@@ -65,7 +67,7 @@
             break;
 
         case "/atualizar":
-            $rotas->atualizar($POST);
+            $rotas->atualizar($_GET['id']);
             break;
         
         case "/salvar":
@@ -73,7 +75,7 @@
             break;
         
         case "/deletar":
-            $rotas->deletar($id);
+            $rotas->deletar($_GET['id']);
             break;
 
         default:

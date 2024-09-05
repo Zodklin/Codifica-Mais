@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Public\\' => array($baseDir . '/public'),
-    'App\\' => array($baseDir . '/src'),
+    'App\\' => array($baseDir . '/src/Controller'),
 );

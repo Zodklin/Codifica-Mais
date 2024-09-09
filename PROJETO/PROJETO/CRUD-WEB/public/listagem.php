@@ -16,7 +16,7 @@
                     <input type="text" id="procurar" class="procurar">
                 </div>
                 <section>
-                    Produtos em estoque:
+                <?php if (empty($_SESSION['produtos'])){echo "Sem produtos em estoque";} else {echo "Produtos em estoque:";} ?>
                 </section>
             </div>
             <div class="lista-itens">
@@ -31,8 +31,8 @@
                     <section class="item-conteudo">
                         <p class="sku">SKU: <?= ($produto['sku']) ?></p>
                         <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
-                        <form action="listagem" method="POST">
-                            <a href="/deletar?id=<?= ($produto['id'])?>"><button class="deletar">deletar</button></a>
+                        <form action="/deletar?id=<?= ($produto['id'])?>" method="POST">
+                            <a href="/deletar?id=<?= ($produto['id'])?>"><button onclick="return confirm('Deseja deletar o registro?')"class="deletar">deletar</button></a>
                         </form>
                     </section>
                 </div>

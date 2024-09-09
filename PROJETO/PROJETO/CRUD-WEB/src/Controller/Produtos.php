@@ -2,6 +2,8 @@
 
 namespace App;
 
+require "helper.php";
+
 class Produtos
 {
     public function listar()
@@ -40,27 +42,27 @@ class Produtos
         header('Location: /listagem');
     }
 
-    public function salvar(array $dados, $id)
+    public function salvar($dados)
     {
-        foreach ($_SESSION['produtos'] as $produto) {
-            if ($produto['id'] == $id) {
-                $produto['nome'] = $dados['nome-item'];
-                $produto['sku'] = $dados['SKU'];
-                $produto['unidade_medida_id'] = $dados['unidade-medida-adicionar'];
-                $produto['valor'] = $dados['valor'];
-                $produto['quantidade'] = $dados['quantidade-adicionar'];
-                $produto['categoria_id'] = $dados['categoria-adicionar'];
-                break;
-            }
-        }
+
+        $ultimoId = count($_SESSION['produtos']) + 1;
+        $_SESSION['produtos'][] = [
+            'id' => $ultimoId,
+            'nome' => $dados['nome-item'],
+            'sku' => $dados['SKU'],
+            'unidade_medida_id' => $dados['unidade-medida-adicionar'],
+            'valor' => $dados['valor'],
+            'quantidade' => $dados['quantidade-adicionar'],
+            'categoria_id' => $dados['categoria-adicionar']
+        ];
+        // dd($_SESSION['produtos']);
+        header('Location: /listagem');
     }
 
     public function deletar($id)
     {
-        foreach ($_SESSION['produtos'] as $ind => $produto){
-            if ($produto['id'] == $id){
-                unset($_SESSION['produtos'][$ind]);
-            }
-        }
+        $produtoDeletado = $id - 1;
+        unset($_SESSION['produtos'][$produtoDeletado]);
+        header('Location: /listagem');
     }
 }

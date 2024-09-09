@@ -57,6 +57,25 @@
         ];
     }
 
+    $_SESSION['produtos'] = [[
+        'id' => 1,
+        'nome' => 'Smartphone',
+        'sku' => '123456',
+        'unidade_medida_id' => '1',
+        'valor' => 1500.00,
+        'quantidade' => 10,
+        'categoria_id' => '1',
+    ],[
+        'id' => 2,
+        'nome' => 'Geladeira',
+        'sku' => '123457',
+        'unidade_medida_id' => '2',
+        'valor' => 2500.00,
+        'quantidade' => 5,
+        'categoria_id' => '2',
+    ],
+];
+
     $uri = strtok($_SERVER['REQUEST_URI'], '?');
     $page = rtrim($uri, '/') ?: '/';
     // var_dump($page);
@@ -80,7 +99,7 @@
             break;
         
         case "/salvar":
-            $rotas->salvar($_POST, $_SESSION['produto'['id']]);
+            $rotas->salvar($_POST);
             break;
         
         case "/deletar":

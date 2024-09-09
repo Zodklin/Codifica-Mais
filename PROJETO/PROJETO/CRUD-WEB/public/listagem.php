@@ -32,7 +32,7 @@
                         <p class="sku">SKU: <?= ($produto['sku']) ?></p>
                         <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
                         <form action="/deletar?id=<?= ($produto['id'])?>" method="POST">
-                            <a href="/deletar?id=<?= ($produto['id'])?>"><button onclick="return confirm('Deseja deletar o registro?')"class="deletar">deletar</button></a>
+                            <a href="/deletar?id=<?= ($produto['id'])?>"><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
                         </form>
                     </section>
                 </div>

@@ -19,26 +19,20 @@ class Produtos
 
     public function editar($id)
     {
-        $produtoSelecionado = $_SESSION['produtos'][$id -1];
+        $produtoSelecionado = $_SESSION['produtos'][$id];
         require "../public/adicionar.php";
     }
 
     public function atualizar($idProduto)
     {
-        // echo '<pre>';
-        // var_dump($_SESSION['produtos'][$idProduto - 1]);
-        // echo '</pre>';
         $dadosProdutos = $_POST;
-        $_SESSION['produtos'][$idProduto -1]['nome'] = $dadosProdutos['nome-item'];
-        $_SESSION['produtos'][$idProduto -1]['sku'] = $dadosProdutos['SKU'];
-        $_SESSION['produtos'][$idProduto -1]['unidade_medida_id'] = $dadosProdutos['unidade-medida-adicionar'];
-        $_SESSION['produtos'][$idProduto -1]['valor'] = $dadosProdutos['valor'];
-        $_SESSION['produtos'][$idProduto -1]['quantidade'] = $dadosProdutos['quantidade-adicionar'];
-        $_SESSION['produtos'][$idProduto -1]['categoria_id'] = $dadosProdutos['categoria-adicionar'];
-        // echo '<pre>';
-        // var_dump($dadosProdutos);
-        // echo '</pre>';
-        // die();
+        $_SESSION['produtos'][$idProduto]['nome'] = $dadosProdutos['nome-item'];
+        $_SESSION['produtos'][$idProduto]['sku'] = $dadosProdutos['SKU'];
+        $_SESSION['produtos'][$idProduto]['unidade_medida_id'] = $dadosProdutos['unidade-medida-adicionar'];
+        $_SESSION['produtos'][$idProduto]['valor'] = $dadosProdutos['valor'];
+        $_SESSION['produtos'][$idProduto]['quantidade'] = $dadosProdutos['quantidade-adicionar'];
+        $_SESSION['produtos'][$idProduto]['categoria_id'] = $dadosProdutos['categoria-adicionar'];
+
         header('Location: /listagem');
     }
 
@@ -46,7 +40,7 @@ class Produtos
     {
 
         $ultimoId = count($_SESSION['produtos']) + 1;
-        $_SESSION['produtos'][] = [
+        $_SESSION['produtos'][$ultimoId] = [
             'id' => $ultimoId,
             'nome' => $dados['nome-item'],
             'sku' => $dados['SKU'],
@@ -55,14 +49,13 @@ class Produtos
             'quantidade' => $dados['quantidade-adicionar'],
             'categoria_id' => $dados['categoria-adicionar']
         ];
-        // dd($_SESSION['produtos']);
+
         header('Location: /listagem');
     }
 
     public function deletar($id)
     {
-        $produtoDeletado = $id - 1;
-        unset($_SESSION['produtos'][$produtoDeletado]);
+        unset($_SESSION['produtos'][$id]);
         header('Location: /listagem');
     }
 }

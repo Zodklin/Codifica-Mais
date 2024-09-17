@@ -1,19 +1,21 @@
 <?php
-
 namespace App;
-
-require "helper.php";
 
 class Produtos
 {
     public function listar()
     {
-        require "../public/listagem.php";
+        $pdo = new \PDO('mysql:host=localhost;dbname=controle_estoque', 'root', '@Zodklin2701');
+        $sql1 = "SELECT * FROM produto";
+        $statement = $pdo->query($sql1);
+        $produtos = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        var_dump($produtos);
+        require "../public/listagem.php"; 
     }
+    
 
     public function criar()
     {
-
         require "../public/adicionar.php";
     }
 

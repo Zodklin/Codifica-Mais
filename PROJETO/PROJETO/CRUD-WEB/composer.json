@@ -2,8 +2,7 @@
     "name": "idcap/crud-web",
     "autoload": {
         "psr-4": {
-            "App\\": "src/Controller/",
-            "Public\\":"public/"
+            "App\\": "src/Controller/"
         }
     },
     "authors": [

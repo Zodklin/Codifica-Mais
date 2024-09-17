@@ -16,23 +16,24 @@
                     <input type="text" id="procurar" class="procurar">
                 </div>
                 <section>
-                <?php if (empty($_SESSION['produtos'])){echo "Sem produtos em estoque";} else {echo "Produtos em estoque:";} ?>
+                <?php if (empty($produtos)){echo "Sem produtos em estoque";} else {echo "Produtos em estoque:";} ?>
                 </section>
             </div>
             <div class="lista-itens">
-            <?php foreach ($_SESSION['produtos'] as $produto): ?>    
+            <?php var_dump($produtos); ?>
+            <?php foreach ($produtos as $produto): ?>    
                 <div class="item">
                     <section class="item-conteudo">
                         <span class="codigo">#00000<?= ($produto['id']) ?></span>
-                        <span class="tipo"><?= ($_SESSION['categorias'][$produto['categoria_id']]) ?></span>
-                        <h2 class="item-nome"><?= ($produto['nome']) ?></h2>
-                        <a href="\editar?id=<?= ($produto['id']) ?>"><button class="editar">Editar</button></a>
+                        <span class="tipo"></span>
+                        <h2 class="item-nome"></h2>
+                        <a href="\editar?id="><button class="editar">Editar</button></a>
                     </section>
                     <section class="item-conteudo">
-                        <p class="sku">SKU: <?= ($produto['sku']) ?></p>
-                        <h2 class="quantidade">Quantidade: <?= ($produto['quantidade']) ?></h2>
-                        <form action="/deletar?id=<?= ($produto['id'])?>" method="POST">
-                            <a href="/deletar?id=<?= ($produto['id'])?>"><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
+                        <p class="sku">SKU:</p>
+                        <h2 class="quantidade">Quantidade:</h2>
+                        <form action="/deletar?id=" method="POST">
+                            <a href="/deletar?id="><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
                         </form>
                     </section>
                 </div>

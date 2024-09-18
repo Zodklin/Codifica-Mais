@@ -20,20 +20,19 @@
                 </section>
             </div>
             <div class="lista-itens">
-            <?php var_dump($produtos); ?>
             <?php foreach ($produtos as $produto): ?>    
                 <div class="item">
                     <section class="item-conteudo">
-                        <span class="codigo">#00000<?= ($produto['id']) ?></span>
-                        <span class="tipo"></span>
-                        <h2 class="item-nome"></h2>
-                        <a href="\editar?id="><button class="editar">Editar</button></a>
+                        <span class="codigo">#00000<?=$produto['produtoId']?></span>
+                        <span class="tipo"><?= $produto['categoriaNome']?></span>
+                        <h2 class="item-nome"><?= $produto['produtoNome']?></h2>
+                        <a href="\editar?id=<?=$produto['produtoId']?>"><button class="editar">Editar</button></a>
                     </section>
                     <section class="item-conteudo">
-                        <p class="sku">SKU:</p>
-                        <h2 class="quantidade">Quantidade:</h2>
-                        <form action="/deletar?id=" method="POST">
-                            <a href="/deletar?id="><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
+                        <p class="sku">SKU: <?= $produto['produtoSku']?></p>
+                        <h2 class="quantidade">Quantidade: <?= $produto['produtoQuantidade']?></h2>
+                        <form action="/deletar?id=<?= $produto['produtoId']?>" method="POST">
+                            <a href="/deletar?id=<?= $produto['produtoId']?>"><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
                         </form>
                     </section>
                 </div>

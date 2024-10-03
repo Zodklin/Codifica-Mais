@@ -13,7 +13,7 @@
             <div class="voltar"><a href="/listagem" style="text-decoration: none; color: #3369c7"><i class="fa-solid fa-arrow-left-long" style="color: #3369c7;"></i></i></a></div>
             <h1 class="titulo-novo-item"><?php  echo isset($produtoSelecionado) ? "Editar" : "Adicionar"; ?></h1>
             <!-- <?php echo isset($produtoSelecionado) ? "/atualizar?id=" . $produtoSelecionado['unidade_medida_id'] : "/salvar"; ?> -->
-            <form method="POST" action="<?php echo isset($produtoSelecionado) ? "/atualizar?id=" . $produtoSelecionado['produtoId'] : "/salvar"; ?>">
+            <form method="POST" enctype="multipart/form-data" action="<?php echo isset($produtoSelecionado) ? "/atualizar?id=" . $produtoSelecionado['produtoId'] : "/salvar"; ?>">
                 <div class="input-nome-item">
                     <label for="nome-item" class="nome-item" >Nome do Item</label>
                     <input type="text" name="nome-item" class="nome-item"  value="<?php  echo isset($produtoSelecionado) ? $produtoSelecionado['produtoNome'] : ""; ?>">
@@ -57,6 +57,9 @@
                         <option value="5" <?php echo isset($produtoSelecionado) && $produtoSelecionado['categoriaId'] == 5 ? 'selected' : ""; ?>>Vestuário</option>
                         <option value="7" <?php echo isset($produtoSelecionado) && $produtoSelecionado['categoriaId'] == 7 ? 'selected' : ""; ?>>Outros</option>
                     </select>
+                </div>
+                <div>
+                    <input type="file" name="imagem" accept="image/png, image/jpeg"/> 
                 </div>
                 <button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>
             </form>

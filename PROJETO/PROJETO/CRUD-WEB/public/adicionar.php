@@ -61,7 +61,7 @@
                 <div>
                     <input type="file" name="imagem" accept="image/png, image/jpeg"/> 
                 </div>
-                <button class="cria-item"><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>
+                <button class="cria-item" onclick="return confirm(<?php echo isset ($msgSuperior) ? $msgSuperior : 'teste'; ?>)" ><?php  echo isset($produtoSelecionado) ? "Atualizar" : "Criar item"; ?></button>
             </form>
         </div>
     </div>

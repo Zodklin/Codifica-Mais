@@ -35,6 +35,10 @@
             $rotas->deletar($_GET['id']);
             break;
 
+        case "/importar":
+            $rotas->importarCsv();
+            break;
+
         default:
             echo "Página não encontrada";
 

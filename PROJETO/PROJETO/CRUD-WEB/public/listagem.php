@@ -11,10 +11,11 @@
         <div class="card-principal">
             <div class="div-header">
                 <a href="\criar"><button class="novo-item">Novo Item</button></a>
-                <div class="input-procurar">
-                    <label for="procurar" class="procurar">Buscar item:</label>
-                    <input type="text" id="procurar" class="procurar">
-                </div>
+                <form class="importar-csv" method="POST" enctype="multipart/form-data" action="/importar">
+                    <label for="importar" class="importar">Arquivo CSV:</label>
+                    <input type="file" id="importar" class="importar" name="importar">
+                    <input type="submit" value="Enviar">
+                </form>
                 <section>
                 <?php if (empty($produtos)){echo "Sem produtos em estoque";} else {echo "Produtos em estoque:";} ?>
                 </section>
@@ -34,6 +35,9 @@
                         <form action="/deletar?id=<?= $produto['produtoId']?>" method="POST">
                             <a href="/deletar?id=<?= $produto['produtoId']?>"><button onclick="return confirm('Deseja deletar o produto?')"class="deletar">deletar</button></a>
                         </form>
+                    </section>
+                    <section >
+                        <img src="<?= $produto['imagem'] ?>" class="imagem-conteudo" alt="imagemProduto">
                     </section>
                 </div>
                 <div class="divisor">

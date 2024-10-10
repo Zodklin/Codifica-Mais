@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(img/17580.jpg);
+}
+
+.card-principal{
+    height: 550px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background-color: white;
+    overflow: hidden;
+    padding-bottom: 12px;
+}
+
+.voltar{
+    margin: 15px 15px 0px 25px;
+    color: red;
+    text-decoration: none;
+}
+
+.lista-itens{
+    height: 80%;
+    overflow: auto;
+}
+
+.input-procurar{
+    display: flex;
+    flex-direction: column;
+}
+
+.novo-item{
+    margin: 20px;
+    background-color: #0077b5;
+    padding: 10px 0px 10px 0px;
+    border-radius: 7px;
+    width: 150px;
+    border: none;
+    transition: box-shadow .3s;
+    color: white;
+}
+
+.novo-item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    cursor: pointer;
+}
+
+.div-header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.procurar{
+   border-radius: 7px;
+   display:flex;
+   flex-direction:column;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 20px 20px 20px;
+    border-radius: 10px;
+    transition: box-shadow .3s;
+    border: 1px solid rgba(0, 0, 0, 0.166);
+    padding: 20px 0px 20px 0px;
+}
+
+.item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+.item-conteudo{
+    margin: 10px
+}
+
+.codigo{
+    color: grey;
+    font-weight: 300;
+}
+
+.tipo{
+    background-color: #c2c2c284;
+    padding: 0px 15px 0px 15px;
+    border-radius: 7px;
+}
+
+.item-nome{
+    font-size: medium;
+    margin-top: 5px;
+}
+
+
+.editar{
+    margin-top: 10px;
+    padding: 5px 20px 5px 20px;
+    background-color: #0077b5;
+    border-radius: 7px;
+    border: none;
+    color: white;
+}
+
+.editar:hover{
+    box-shadow: 0px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.deletar{
+    background-color: #ff003c;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    width: 70px;
+    margin-top: 7px;
+}
+
+.deletar:focus{
+    outline: none;
+}
+
+.deletar:hover{
+    cursor: pointer;
+}
+
+.sku{
+    font-size: medium;
+    margin-top: 5px;
+}
+
+.quantidade{
+    font-size: medium;
+    margin-top: 5px;
+}
+
+.divisor{
+    display: flex;
+    justify-content: center;
+}
+
+.divisor hr{
+    width: 300px;
+}
+
+.titulo-novo-item{
+    margin: 20px;
+}
+
+.input-nome-item{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:column;
+    width: 90%;
+    margin: 20px 0px 30px 30px;
+}
+
+.input-sku-unidade{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:row;
+    width: 90%;
+    margin-left: 30px;
+    justify-content: space-around;
+    margin: 40px 0px 30px 30px;
+    
+}
+
+.SKU{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.unidade{
+    width: 200px;
+    margin-top: 100px;
+}
+
+.input-valor-quantidade{
+    border-radius: 7px;
+    display:flex;
+    flex-direction:row;
+    width: 90%;
+    margin-left: 30px;
+    justify-content: space-around;
+    margin: 20px 0px 30px 30px;
+}
+
+.valor{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.quantidade-adicionar{
+    margin-right: 45px;
+    width: 200px;
+}
+
+.categoria-adicionar{
+    display:flex;
+    flex-direction:column;
+    width: 210px;
+    margin: 0px 0px 20px 15px;
+}
+
+.label-categoria-adicionar{
+    margin-left: 13.5px;
+}
+
+.unidade-medida-adicionar{
+    display:flex;
+    flex-direction:column;
+    width: 210px;
+    height: 28px;
+    padding: 2px;
+
+}
+
+
+.cria-item{
+    margin-left: 30px;
+    background-color: #0077b5;
+    padding: 10px 0px 10px 0px;
+    border-radius: 7px;
+    width: 150px;
+    border: none;
+    transition: box-shadow .3s;
+    color: white;
+    margin-top: 50px;
+}
+
+.cria-item:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    cursor: pointer;
+}
